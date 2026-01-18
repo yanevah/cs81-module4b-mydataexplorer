@@ -130,5 +130,18 @@ function correlateCaffeineToFocus(data) {
   return highCaffeineFocus / highDays > lowCaffeineFocus / lowDays;
 }
 
+// Output / analysis results
+console.log("Analyzing Personal Data Journal...\n");
+
+const mostScreen = findHighestScreenTime(weekData);
+console.log(`Most screen time: ${mostScreen.day} (${mostScreen.screenTime} hrs)`);
+
+console.log(`Average sleep: ${averageSleep(weekData)} hrs`);
+console.log(`Most frequent mood: "${mostFrequentMood(weekData)}"`);
+
+console.log(
+  "Does more caffeine mean better focus? →",
+  correlateCaffeineToFocus(weekData) ? "Yes" : "Nope!"
+);
 
 
